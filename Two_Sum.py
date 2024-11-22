@@ -3,7 +3,7 @@ def two_sum(nums, target):
         for right in range(left + 1, len(nums)):
             if nums[left] + nums[right] == target:
                 return [left, right]
-            
+
     return [0, 0]
 
 # Exemple d'utilisation
