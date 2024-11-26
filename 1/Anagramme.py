@@ -1,20 +1,21 @@
-def are_anagrams(str1: str, str2: str) -> bool:
-    return sorted(str1) == sorted(str2)
+# def are_anagrams(str1: str, str2: str) -> bool:
+#     return sorted(str1) == sorted(str2)
 
 def are_anagrams(str1: str, str2: str) -> bool:
     if len(str1) != len(str2):
         return False
-
-    char_count = {}
+    
+    count_char = {}
     for char in str1:
-        char_count[char] = char_count.get(char, 0) + 1
-
+        count_char[char] = count_char.get(char, 0) + 1
+        
     for char in str2:
-        if char not in char_count:
+        if char not in count_char:
             return False
-        char_count[char] -= 1
-        if char_count[char] < 0:
+        count_char[char] -= 1
+        if count_char[char] < 0:
             return False
+        
     return True
 
 def main():

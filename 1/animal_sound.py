@@ -7,21 +7,3 @@ def animal_sound(s):
                 res.append(text)
                 break
     return res
-
-
-def animal_sound(s):
-    def is_animal_sound(mot):
-        left = 0
-        right = 0
-        count = 0
-        while right < len(mot):
-            while mot[left] == mot[right]:
-                count += 1
-                right += 1
-                if count > 2:
-                    return True
-            left = right
-            count = 0
-            right += 1
-
-        return False
