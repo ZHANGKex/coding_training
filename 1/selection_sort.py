@@ -12,4 +12,11 @@ if __name__ == "__main__":
     arr = [64, 34, 25, 12, 22, 11, 90]
     print(selection_sort(arr))  # Attendu: [11, 12, 22, 25, 34, 64, 90]
 
-print("yes")
+def selection_sort(arr):
+    for i in range(len(arr)):
+        min_index = i
+        for j in range(i + 1, len(arr)):
+            if arr[min_index] > arr[i]:
+                min_index = j
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+    return arr
